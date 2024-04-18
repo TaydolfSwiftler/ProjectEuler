@@ -61,6 +61,6 @@ for i in range (3, 9):
 pos_permutations = list(it.permutations([x for x in range(0,6)]))
 print(pos_permutations)
 
-for x in pos_permutations:
-    for i in x:
-        for j in Polygon_numbers[i]:
+# for x in pos_permutations:
+#     for i in x:
+#         for j in Polygon_numbers[i]:
