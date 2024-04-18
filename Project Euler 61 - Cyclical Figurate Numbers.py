@@ -10,6 +10,15 @@ def iscyclical(n, m):
         return True
     return False
 
+octa = []
+for j in range(1, 100):
+    poly = polygonal_number_generator(8, j)
+    if poly >= 10000:
+        break
+    if poly < 1000:
+        continue
+    octa.append(poly)
+
 Polygon_numbers =[[],[],[],[],[],[]] # 0th element = trig Numbers
 
 for i in range (3, 9):
@@ -22,14 +31,36 @@ for i in range (3, 9):
         Polygon_numbers[i-3].append(poly)
 
 
-two_cyclical = []
+# all_shapes = []
+# for i in range(3, 9):
+#     for j in range(1, 500):
+#         poly = polygonal_number_generator(i, j)
+#         if poly >= 10000:
+#             break
+#         if poly < 1000:
+#             continue
+#
+#         shape = ""
+#         match i:
+#             case 3:
+#                 shape = "triangle"
+#             case 4:
+#                 shape = "square"
+#             case 5:
+#                 shape = "pent"
+#             case 6:
+#                 shape = "hex"
+#             case 7:
+#                 shape = "hep"
+#             case 8:
+#                 shape = "oct"
+#             case _:
+#                 print("Critical Error")
+#         all_shapes.append([poly, shape])
 
-for i in Polygon_numbers[0]:
-    for j in Polygon_numbers[1]:
-        if iscyclical(i, j):
-            two_cyclical.append([i, j])
-        if iscyclical(j,i):
-            two_cyclical.append([j, i])
+pos_permutations = list(it.permutations([x for x in range(0,6)]))
+print(pos_permutations)
 
-print(two_cyclical)
-print(len(two_cyclical))
+for x in pos_permutations:
+    for i in x:
+        for j in Polygon_numbers[i]:
