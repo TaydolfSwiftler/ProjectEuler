@@ -55,6 +55,18 @@ def prime_phi(a):   # Gives phi for the product of an input list filled with onl
 # Sieve laufen lassen als Dict mit PHI ergebnissen angehängt
 
 def phi_sieve(n): # Erzeugt alle zahlen kleiner n und ihr dazugehöriges Phi
-    totient = {1: 1}
-    for i in range(2, n):
-        totient[i] = i - 1
+    primes = sieve(n)
+    totient = [1] * (n+1)
+    for i in primes:
+        s = 1
+        while s <= n:
+            try:
+                s += i
+                totient[s] = totient[s] * (i-1)
+            except:
+                continue
+
+    return totient
+
+print(phi_sieve(100))
+print(phi(7))
