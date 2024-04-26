@@ -1,0 +1,62 @@
+Parse Input as Integer
+
+use std::io;
+    let mut input = String::new();
+
+    io::stdin()
+        .read_line(&mut input)
+        .expect("failed to read line");
+
+    let x: i32 = input.trim().parse().expect("Input is not an Integer");
+oder let x: i32 = input.trim().parse().unwrap(); //Gibt integer type zurück aus dem Bundle mit ERR
+
+cargo run
+rustfmt main.rs
+
+Typecasting mit as
+    let x:u8 = 32
+    x as f32 -> float
+
+and = &&
+or = ||
+not = !
+
+Sleep & Time
+use std::{thread, time};
+let second = time::Duration::from_millis(1000);
+thread::sleep(second);
+
+Expressions return something
+{let x = 1;
+x + 1} returns 2, no semicolon after second line
+
+
+Functions
+fn add_numbers(x: f32, y: f32) -> f32 {
+    x + y
+}
+
+
+Loops
+fn looper(mut iterations: u16) {
+    loop {
+        iterations = iterations - 1;
+        println!("Loops till end = {}", iterations);
+        if iterations == 0 {
+            break;
+        }
+    }
+}
+
+fn looper(mut iterations: u16) {
+    while iterations != 0 {
+        iterations = iterations -1;
+        println!("{}", iterations);
+    }
+}
+
+fn looper(arr: [i16; 5]) {
+    for i in arr {
+        println!("{}", i);
+    }
+}
