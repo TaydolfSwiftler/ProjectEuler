@@ -1,9 +1,11 @@
 import numpy as np
 from sympy import isprime
 import itertools
+from time import process_time
 import random
 
 
+start = process_time()
 def sieve(n):
     flags = np.ones(n, dtype=bool)
     flags[0] = flags[1] = False
@@ -92,3 +94,11 @@ print(conc_prime_quadruples)
 print(conc_prime_quintets)
 
 print("the solution is: ", sum(conc_prime_quintets[0]))
+
+sieve(1000000000)
+
+
+end = process_time()
+print(end - start)
+
+# Sieve of 1_000_000_000 takes 18.5625 seconds
