@@ -15,4 +15,4 @@ while f_n < 4000000:
 
 print("The Solution is: ", sum)
 end = timeit.timeit()
-print("Time elapsed: ", end - start)
+print("Time elapsed: ", end - start) #runs in 110 microseconds

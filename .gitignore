@@ -1,3 +1,4 @@
 /venv/
-/schmierblatt.py/
-/Hello World.rs
+/schmierblatt.py
+/learn_rust/target/
+/.idea/

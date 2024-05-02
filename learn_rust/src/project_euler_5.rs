@@ -7,7 +7,8 @@ use crate::project_euler_3::prime_factors;
 
 pub fn smallest_multiple(cap: u64) -> u64 {
     let mut needed_factors: Vec<u64> = vec![];
-    for i in 2..cap {
+    let mut needed_factors_temp: Vec<u64> = vec![];
+    for i in 2..cap+1 {
         let mut fac = prime_factors(i);
         let mut fac_copy = fac.copy();
         let mut fac_sort = fac.sort();
@@ -17,13 +18,18 @@ pub fn smallest_multiple(cap: u64) -> u64 {
             if freq_in_main == 0 {
                 continue;
             } else {
-                let freq_in_side = fac_copy.iter().filter(|&n| *n == j).count();
-                let diff:i32 = freq_in_main - freq_in_side;
-                if diff > 0 {
-
+                for k in 0..needed_factors.len() {
+                    if needed_factors[k] == j {
+                        needed_factors = needed_factors.remove(k);
+                    }
                 }
-                for k in 1..freq_in_side
 
+            }
+                // let freq_in_side = fac_copy.iter().filter(|&n| *n == j).count();
+                // let diff:i32 = freq_in_main - freq_in_side;
+                // if diff > 0 {
+
+                //}
 
             }
         }
