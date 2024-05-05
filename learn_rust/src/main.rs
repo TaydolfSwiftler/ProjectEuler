@@ -1,13 +1,16 @@
-mod project_euler_7;
+mod project_euler_8;
 
 use std::time::Instant;
-use crate::project_euler_7::prime_sieve;
+use crate::project_euler_8::largest_product;
+
 
 fn main() {
     let start = Instant::now();
 
-    prime_sieve(10000000);
+    println!("{}", largest_product());
 
     let duration = start.elapsed();
     println!("Time elapsed: {:?}", duration);
 }
+
+

@@ -6,6 +6,7 @@ import random
 
 
 start = process_time()
+
 def sieve(n):
     flags = np.ones(n, dtype=bool)
     flags[0] = flags[1] = False
