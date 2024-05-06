@@ -1,17 +1,14 @@
-mod project_euler_7;
-mod project_euler_10;
-mod project_euler_12;
-mod project_euler_14;
-
 use std::time::Instant;
-use crate::project_euler_10::prime_sum_below_cap;
-use crate::project_euler_12::divisible_trig_nums;
-
+use dashu_int;
+use dashu_int::UBig;
+mod project_euler_15;
+use crate::project_euler_15::fac;
 
 fn main() {
     let start = Instant::now();
 
-    println!("{:?}",divisible_trig_nums(1000));
+    println!("{}", fac(50000));
+
 
     let duration = start.elapsed();
     println!("Time elapsed: {:?}", duration);
