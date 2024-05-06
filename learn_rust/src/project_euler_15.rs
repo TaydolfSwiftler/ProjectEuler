@@ -5,7 +5,7 @@ use dashu_int::UBig;
 pub fn fac (input: usize) -> UBig {
     let mut result = UBig::ONE;
     let mut counter = UBig::from(input);
-    while true {
+    loop {
         result = result * counter.clone();
         counter = counter - UBig::ONE;
         if counter == UBig::ZERO {
@@ -14,10 +14,12 @@ pub fn fac (input: usize) -> UBig {
     }
     result
 }
-pub fn nchr (top: u128, bottom: u128) -> u128 {
-
-
-
-
-    1
+pub fn nchr (top: usize, bottom: usize) -> UBig {
+    if top == bottom {
+        return UBig::ONE;
+    }
+    let result = fac(top) / (fac(bottom) * (fac(top - bottom)));
+    result
 }
+
+//Solution nChr(40,20) = 137846528820 in 120 microseconds
