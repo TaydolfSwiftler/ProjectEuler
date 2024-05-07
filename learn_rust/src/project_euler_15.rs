@@ -2,7 +2,7 @@
 use dashu_int;
 use dashu_int::UBig;
 
-pub fn fac (input: usize) -> UBig {
+pub fn fac(input: usize) -> UBig {
     let mut result = UBig::ONE;
     let mut counter = UBig::from(input);
     loop {
@@ -14,7 +14,7 @@ pub fn fac (input: usize) -> UBig {
     }
     result
 }
-pub fn nchr (top: usize, bottom: usize) -> UBig {
+pub fn nchr(top: usize, bottom: usize) -> UBig {
     if top == bottom {
         return UBig::ONE;
     }

@@ -8,9 +8,8 @@ pub fn digit_sum(input: UBig) -> UBig {
         sum += input_var.clone() % UBig::from(10u32);
         input_var = input_var / UBig::from(10u32);
         if input_var == UBig::ZERO {
-            break
+            break;
         }
-
     }
     sum
 }

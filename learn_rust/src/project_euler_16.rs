@@ -9,9 +9,8 @@ pub fn power_digit_sum(base: usize, power: usize) -> UBig {
         sum += big_num.clone() % UBig::from(10u32);
         big_num = (big_num / UBig::from(10u32));
         if big_num == UBig::ZERO {
-            break
+            break;
         }
-
     }
     sum
 }
