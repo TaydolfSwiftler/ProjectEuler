@@ -34,24 +34,30 @@ pub fn fib(n: UBig) -> UBig{
     sum
 }
 
-pub fn first_1000_digit_fib() -> UBig {
-
-
-
-    UBig::ONE
+pub fn first_n_digit_fib(n: usize) -> UBig {
+    let mut sum: UBig;
+    let mut last: UBig = UBig::ZERO;
+    let mut curr: UBig = UBig::ONE;
+    let mut i = UBig::ZERO;
+    loop {
+        sum = last + curr.clone();
+        last = curr;
+        curr = sum.clone();
+        i = i + UBig::ONE;
+        if count_digits(sum) >= n {
+            return i + UBig::ONE;
+        }
+    }
 }
 
+//first_n_digit_fib(1000) returns 4782 after  541.8697ms
 
-fn length(n: u32, base: u32) -> u32 {
-    let mut power = base;
+pub fn count_digits(input: UBig) -> usize {
+    let mut base = UBig::from(10u8);
     let mut count = 1;
-    while n >= power {
+    while base <= input {
         count += 1;
-        if let Some(new_power) = power.checked_mul(base) {
-            power = new_power;
-        } else {
-            break;
-        }
+        base = base * UBig::from(10u8);
     }
     count
 }

@@ -1,3 +1,6 @@
+#![allow(unused_imports)]
+#![allow(dead_code)]
+
 use std::collections::HashMap;
 use std::time::Instant;
 
@@ -10,6 +13,8 @@ mod project_euler_21;
 mod project_euler_23;
 mod project_euler_24;
 mod project_euler_25;
+mod project_euler_26;
+mod project_euler_29;
 
 use crate::project_euler_15::{fac, nchr};
 use crate::project_euler_16::power_digit_sum;
@@ -17,12 +22,13 @@ use crate::project_euler_20::digit_sum;
 use crate::project_euler_21::{sum_of_amicable_numbers_bwlow_cap, sum_of_proper_divisors};
 use crate::project_euler_23::{is_abundant, sum_not_writabable_as_abundant};
 use crate::project_euler_24::create_all_iterations;
-use crate::project_euler_25::fib;
+use crate::project_euler_25::{count_digits, fib, first_n_digit_fib};
+use crate::project_euler_29::distinct_terms_in_powers;
 
 fn main() {
     let start = Instant::now();
 
-    println!("{}", fib(UBig::from(1000u32)));
+    println!("{}",distinct_terms_in_powers(UBig::from(101u8),UBig::from(101u8)));
 
     let duration = start.elapsed();
     println!("Time elapsed: {:?}", duration);

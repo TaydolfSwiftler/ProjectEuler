@@ -15,6 +15,20 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c0b80bf6b85aa68c58ffea2ddb040109943049ce3fbdf4385d0380aef08ef289"
 
 [[package]]
+name = "dashu-float"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "85078445a8dbd2e1bd21f04a816f352db8d333643f0c9b78ca7c3d1df71063e7"
+dependencies = [
+ "dashu-base",
+ "dashu-int",
+ "num-modular",
+ "num-order",
+ "rustversion",
+ "static_assertions",
+]
+
+[[package]]
 name = "dashu-int"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -47,6 +61,7 @@ dependencies = [
 name = "learn_rust"
 version = "0.1.0"
 dependencies = [
+ "dashu-float",
  "dashu-int",
  "itertools",
 ]
