@@ -28,4 +28,4 @@ pub fn long_collatz_chain_blow_cap(cap: usize) -> (usize, usize) {
     (input_max, max_len)
 }
 
-//Solution (837799, 525) in 299.3724ms
+//Solution (837799, 525) in 102.6032ms

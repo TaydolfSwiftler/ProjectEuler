@@ -13,7 +13,7 @@ pub fn prime_sieve(cap: usize) -> Vec<bool> {
     }
     sieve
 }
-// Sieve of 1_000_000_000 takes 33 seconds
+// Sieve of 1_000_000_000 takes 10.3688467s seconds
 
 
 const LIMIT: usize = 100000;

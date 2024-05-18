@@ -40,7 +40,7 @@ pub fn first_n_digit_fib(n: usize) -> UBig {
     let mut curr: UBig = UBig::ONE;
     let mut i = UBig::ZERO;
     loop {
-        sum = last + curr.clone();
+        sum = last + &curr;
         last = curr;
         curr = sum.clone();
         i = i + UBig::ONE;
@@ -50,7 +50,7 @@ pub fn first_n_digit_fib(n: usize) -> UBig {
     }
 }
 
-//first_n_digit_fib(1000) returns 4782 after  541.8697ms
+//first_n_digit_fib(1000) returns 4782 after  61.2955ms
 
 pub fn count_digits(input: UBig) -> usize {
     let mut base = UBig::from(10u8);

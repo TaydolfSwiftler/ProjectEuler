@@ -14,4 +14,4 @@ pub fn digit_sum(input: UBig) -> UBig {
     sum
 }
 
-// digit_sum(fac(100)) finds 648 in 200 Microseconds
+// digit_sum(fac(100)) finds 648 in 91.2µs

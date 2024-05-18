@@ -22,4 +22,4 @@ pub fn nchr(top: usize, bottom: usize) -> UBig {
     result
 }
 
-//Solution nChr(40,20) = 137846528820 in 120 microseconds
+//Solution nChr(40,20) = 137846528820 in 59µs

@@ -33,4 +33,4 @@ pub fn sum_of_amicable_numbers_bwlow_cap(cap: usize) -> usize {
 }
 
 // This is dumb, because every pair is twice in the Hashmap, but i dont wanna fix it
-// sum_of_amicable_numbers_bwlow_cap(10000) = 31626 in 116 ms
+// sum_of_amicable_numbers_bwlow_cap(10000) = 31626 in 50.0354ms

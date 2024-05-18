@@ -18,4 +18,4 @@ pub fn distinct_terms_in_powers(a: UBig, b: UBig) -> usize {
     numbers_seen.len()
 }
 
-// distinct_terms_in_powers(UBig::from(101u8),UBig::from(101u8)) finds 9183 in 11.2917ms
+// distinct_terms_in_powers(UBig::from(101u8),UBig::from(101u8)) finds 9183 in 1.9862ms

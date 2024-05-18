@@ -13,7 +13,7 @@ pub fn create_all_iterations(it_basis: Vec<usize>) -> usize {
     perm_vec_len
 }
 
-// create_all_iterations(vec![0,1,2,3,4,5,6,7,8,9]) returns[2, 7, 8, 3, 9, 1, 5, 4, 6, 0] in 4.3s
+// create_all_iterations(vec![0,1,2,3,4,5,6,7,8,9]) returns[2, 7, 8, 3, 9, 1, 5, 4, 6, 0] in 1.1195165s
 //This is beyond stupid, but i dont understand those itertools objects
 //i check a million time if it's the millionth element lol
 //ToDo: hardcode the generation and stop after a million

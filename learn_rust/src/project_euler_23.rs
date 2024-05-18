@@ -16,7 +16,6 @@ pub fn sum_not_writabable_as_abundant(cap: usize) -> usize {
             all_abundant_below_cap.push(i);
         }
     }
-    println!("{:?}", all_abundant_below_cap);
     for i in 1..cap {
         sum += i;
         for j in &all_abundant_below_cap {
@@ -32,6 +31,6 @@ pub fn sum_not_writabable_as_abundant(cap: usize) -> usize {
     sum
 }
 
-//This does work for the value of 28123, but is atrociously slow
-//sum_not_writabable_as_abundant(28123) = 4179871 in 146 seconds
+//This does work for the value of 28123, but is pretty slow
+//sum_not_writabable_as_abundant(28123) = 4179871 in 6.9807258s
 //ToDo: figure something out yo

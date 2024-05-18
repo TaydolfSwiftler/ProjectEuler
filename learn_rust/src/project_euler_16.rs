@@ -15,4 +15,4 @@ pub fn power_digit_sum(base: usize, power: usize) -> UBig {
     sum
 }
 
-//power_digit_sum(2,1000) = 1366 in 342 microseconds
+//power_digit_sum(2,1000) = 1366 in 118.2µs
