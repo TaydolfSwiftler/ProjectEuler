@@ -12,7 +12,7 @@ pub fn fib_rec(n: UBig) -> UBig {
 
 //Overflows Stack for big n
 
-pub fn fib(n: UBig) -> UBig{
+pub fn fib(n: UBig) -> UBig {
     if n < UBig::ZERO {
         panic!("{} is negative!", n);
     } else if n == UBig::ZERO {

@@ -3,8 +3,7 @@ pub fn collatz_seq_len(mut input: usize) -> usize {
     while input != 1 {
         if input % 2 == 0 {
             input /= 2;
-        }
-        else {
+        } else {
             input = 3 * input + 1;
         }
         seq_len += 1;
