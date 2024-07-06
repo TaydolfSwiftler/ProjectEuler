@@ -117,8 +117,20 @@ pub fn find_cycles(fig_nums: Vec<Vec<u64>>) -> u64 {
     for a in &fig_pairs {
         for b in &fig_pairs {
             for c in &fig_pairs {
-                if a.2 != b.2 && a.3 != b.3 && a.2 != b.3 && b.2 != a.3 && c.2 != a.2 && c.3 != a.3 && c.2 != a.3 && c.3 != a.2 && c.2 != b.2 && c.3 != b.3 && c.2 != b.3  && c.3 != b.2 {
-                    if are_cyclic(a.1, b.0) && are_cyclic(b.1, c.0) && are_cyclic(c.1, a.0){
+                if a.2 != b.2
+                    && a.3 != b.3
+                    && a.2 != b.3
+                    && b.2 != a.3
+                    && c.2 != a.2
+                    && c.3 != a.3
+                    && c.2 != a.3
+                    && c.3 != a.2
+                    && c.2 != b.2
+                    && c.3 != b.3
+                    && c.2 != b.3
+                    && c.3 != b.2
+                {
+                    if are_cyclic(a.1, b.0) && are_cyclic(b.1, c.0) && are_cyclic(c.1, a.0) {
                         figs.push((a, b, c, "abc"))
                     }
                     if are_cyclic(b.1, a.0) && are_cyclic(a.1, c.0) && are_cyclic(c.1, b.0) {
@@ -129,7 +141,7 @@ pub fn find_cycles(fig_nums: Vec<Vec<u64>>) -> u64 {
         }
     }
 
-    figs[0].0.0 + figs[0].0.1 + figs[0].1.0 + figs[0].1.1 + figs[0].2.0 + figs[0].2.1
+    figs[0].0 .0 + figs[0].0 .1 + figs[0].1 .0 + figs[0].1 .1 + figs[0].2 .0 + figs[0].2 .1
 }
 
 //TODO: Kill yourself

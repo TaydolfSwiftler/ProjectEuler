@@ -1,5 +1,5 @@
 use crate::project_euler_7::actually_good_sieve;
-use::std::cmp::max;
+use ::std::cmp::max;
 
 //Find the value of n, 1 < n < 10^7 , for which phi(n) is a permutation of n and the ratio n/phi(n) produces a minimum.
 
@@ -30,15 +30,13 @@ pub fn gen_unique_prime_facs(primes: Vec<bool>, cap: u32) -> Vec<Vec<u32>> {
     prime_facs
 }
 
-
 pub fn gen_totient_vec(prime_facs: Vec<Vec<u32>>) -> Vec<u32> {
     let mut totient_vals = vec![0];
     let mut runner = 1;
     while runner < prime_facs.len() {
         if prime_facs[runner].is_empty() {
             totient_vals.push(runner as u32 - 1);
-        }
-        else {
+        } else {
             let mut val = runner.clone() as f32;
             for i in &prime_facs[runner] {
                 val = val * (1f32 - (1f32 / *i as f32));
@@ -50,9 +48,9 @@ pub fn gen_totient_vec(prime_facs: Vec<Vec<u32>>) -> Vec<u32> {
     totient_vals
 }
 
-pub fn is_permutation (num1: u32, num2: u32) -> bool {
-    let mut str1 = num1.to_string();
-    let mut str2 = num2.to_string();
+pub fn is_permutation(num1: u32, num2: u32) -> bool {
+    let str1 = num1.to_string();
+    let str2 = num2.to_string();
     let mut vec1: Vec<char> = str1.chars().collect();
     let mut vec2: Vec<char> = str2.chars().collect();
     vec1.sort_unstable();
@@ -63,7 +61,7 @@ pub fn is_permutation (num1: u32, num2: u32) -> bool {
     false
 }
 
-pub fn solve_61 (totient_vals: Vec<u32>) -> (u32, u32) {
+pub fn solve_61(totient_vals: Vec<u32>) -> (u32, u32) {
     let mut runner = 2;
     let mut candidates = vec![];
     while runner < totient_vals.len() {
@@ -73,9 +71,9 @@ pub fn solve_61 (totient_vals: Vec<u32>) -> (u32, u32) {
         runner += 1;
     }
     let mut min: f32 = 100000f32;
-    let mut winner= (0,0);
+    let mut winner = (0, 0);
     for i in candidates {
-        let mut ratio = i.0 as f32 / i.1 as f32;
+        let ratio = i.0 as f32 / i.1 as f32;
         if ratio < min {
             min = ratio;
             winner = i;
