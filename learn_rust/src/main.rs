@@ -24,6 +24,7 @@ mod project_euler_7;
 mod project_euler_70;
 mod project_euler_75;
 mod project_euler_76;
+mod project_euler_94;
 mod scribbles;
 
 use crate::project_euler_14::long_collatz_chain_blow_cap;
@@ -41,19 +42,18 @@ use crate::project_euler_61::{
 };
 use crate::project_euler_7::{actually_good_sieve, prime_sieve};
 use crate::project_euler_70::{gen_totient_vec, gen_unique_prime_facs, is_permutation, solve_61};
-use crate::project_euler_75::{gcd, gen_primitive_pyt_trips, gen_some_trigs, singular_integer_right_trigs};
+use crate::project_euler_75::{
+    gcd, gen_primitive_pyt_trips, gen_some_trigs, singular_integer_right_trigs,
+};
+use crate::project_euler_94::gen_alm_equ_trigs;
 //use crate::project_euler_75::gen_some_trigs;
 use crate::scribbles::get_rand_vec;
 
 fn main() {
     let start = Instant::now();
 
-    let limit = 1_500_001;
 
-    let prim_triples = gen_primitive_pyt_trips(limit);
-    let solution_75 = singular_integer_right_trigs(prim_triples, limit);
-
-    println!("{:?}", solution_75);
+    println!("{:?}", gen_alm_equ_trigs(1_000));
 
     let duration = start.elapsed();
     println!("Time elapsed: {:?}", duration);

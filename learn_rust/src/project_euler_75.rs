@@ -52,7 +52,7 @@ pub fn gen_primitive_pyt_trips(limit: u64) -> Vec<(u64, u64, u64)> {
     let mut triples = vec![];
     for n in 1..cap {
         for m in n + 1..cap {
-            if is_coprime(m, n) && ((m % 2 == 0 && n % 2 == 1) || (n % 2 == 0 && m % 2 != 0)){
+            if is_coprime(m, n) && ((m % 2 == 0 && n % 2 == 1) || (n % 2 == 0 && m % 2 != 0)) {
                 let n_sq = n.pow(2);
                 let m_sq = m.pow(2);
                 triples.push((m_sq - n_sq, 2 * m * n, m_sq + n_sq));
@@ -62,7 +62,6 @@ pub fn gen_primitive_pyt_trips(limit: u64) -> Vec<(u64, u64, u64)> {
     triples
 }
 
-
 pub fn singular_integer_right_trigs(prim_trips: Vec<(u64, u64, u64)>, limit: u64) -> u64 {
     let mut count_vec = vec![0u8; limit as usize];
 
@@ -71,7 +70,6 @@ pub fn singular_integer_right_trigs(prim_trips: Vec<(u64, u64, u64)>, limit: u64
         loop {
             let circumference = runner_trip.0 + runner_trip.1 + runner_trip.2;
             if circumference < limit {
-
                 count_vec[circumference as usize] += 1;
                 runner_trip.0 += i.0;
                 runner_trip.1 += i.1;
@@ -89,7 +87,6 @@ pub fn singular_integer_right_trigs(prim_trips: Vec<(u64, u64, u64)>, limit: u64
     }
     result_count
 }
-
 
 //    let limit = 1_500_001;
 //
