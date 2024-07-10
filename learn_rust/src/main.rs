@@ -9,6 +9,7 @@ use std::time::Instant;
 use dashu_float::{DBig, FBig};
 use dashu_int;
 use dashu_int::UBig;
+
 mod project_euler_14;
 mod project_euler_15;
 mod project_euler_16;
@@ -25,6 +26,7 @@ mod project_euler_70;
 mod project_euler_75;
 mod project_euler_76;
 mod project_euler_94;
+mod project_euler_95;
 mod scribbles;
 
 use crate::project_euler_14::long_collatz_chain_blow_cap;
@@ -46,14 +48,19 @@ use crate::project_euler_75::{
     gcd, gen_primitive_pyt_trips, gen_some_trigs, singular_integer_right_trigs,
 };
 use crate::project_euler_94::gen_alm_equ_trigs;
+use crate::project_euler_95::{
+    find_amicable_chain, get_social_chain, proper_divisors_sum, proper_divisors_sum_f,
+};
 //use crate::project_euler_75::gen_some_trigs;
 use crate::scribbles::get_rand_vec;
 
 fn main() {
     let start = Instant::now();
 
-
-    println!("{:?}", gen_alm_equ_trigs(1_000));
+    let lcv = find_amicable_chain(1_000_000);
+    println!("Longest chain found: {:?}", lcv);
+    let min = lcv.iter().min().unwrap_or(&0u64);
+    println!("Smallest Entry: {}", min);
 
     let duration = start.elapsed();
     println!("Time elapsed: {:?}", duration);
