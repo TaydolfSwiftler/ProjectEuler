@@ -29,7 +29,7 @@ pub fn proper_divisors_sum_f(input: u64) -> u64 {
 
 pub fn get_social_chain(start: u64) -> Vec<u64> {
     let mut result = vec![start];
-    let mut next = start.clone();
+    let mut next = start;
     loop {
         next = proper_divisors_sum(next);
         if result.contains(&next) {
@@ -53,23 +53,21 @@ pub fn find_amicable_chain(cap: u64) -> Vec<u64> {
 
         chain_vec.push(j);
         let mut runner = j.clone();
+
         loop {
             if runner >= cap {
                 break;
             }
 
             runner = div_sum_arr[runner as usize];
-
             if chain_vec[0] == runner {
                 if chain_vec.len() > longest_chain_vec.len() {
                     longest_chain_vec = chain_vec.clone();
                 }
             }
-
             if chain_vec.contains(&runner) {
                 break;
             }
-
             chain_vec.push(runner);
         }
         k += 1;
@@ -77,7 +75,6 @@ pub fn find_amicable_chain(cap: u64) -> Vec<u64> {
             break;
         }
     }
-
     longest_chain_vec
 }
 

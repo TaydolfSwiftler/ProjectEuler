@@ -28,6 +28,7 @@ mod project_euler_76;
 mod project_euler_94;
 mod project_euler_95;
 mod scribbles;
+mod project_euler_100;
 
 use crate::project_euler_14::long_collatz_chain_blow_cap;
 use crate::project_euler_15::{fac, nchr};
@@ -47,21 +48,22 @@ use crate::project_euler_70::{gen_totient_vec, gen_unique_prime_facs, is_permuta
 use crate::project_euler_75::{
     gcd, gen_primitive_pyt_trips, gen_some_trigs, singular_integer_right_trigs,
 };
+use crate::project_euler_76::{plus_minus_part, plus_minus_part_diffs};
 use crate::project_euler_94::gen_alm_equ_trigs;
 use crate::project_euler_95::{
     find_amicable_chain, get_social_chain, proper_divisors_sum, proper_divisors_sum_f,
 };
-//use crate::project_euler_75::gen_some_trigs;
 use crate::scribbles::get_rand_vec;
 
 fn main() {
     let start = Instant::now();
 
-    let lcv = find_amicable_chain(1_000_000);
-    println!("Longest chain found: {:?}", lcv);
-    let min = lcv.iter().min().unwrap_or(&0u64);
-    println!("Smallest Entry: {}", min);
+    let diffs = plus_minus_part_diffs(100);
+    println!("{:?}", diffs);
 
-    let duration = start.elapsed();
-    println!("Time elapsed: {:?}", duration);
+    let plus_minus_vec = plus_minus_part(&diffs);
+    println!("{:?}", plus_minus_vec);
+
+    println!("Time eslapsed: {:?}", start.elapsed());
+
 }
