@@ -9,6 +9,8 @@ use std::time::Instant;
 use dashu_float::{DBig, FBig};
 use dashu_int;
 use dashu_int::UBig;
+use rand::Rng;
+use crate::Lucas_lehmer::{lucas_lehmer, professional_sieve, use_is_prime_t};
 
 mod project_euler_14;
 mod project_euler_15;
@@ -29,6 +31,7 @@ mod project_euler_94;
 mod project_euler_95;
 mod scribbles;
 mod project_euler_100;
+mod Lucas_lehmer;
 
 use crate::project_euler_14::long_collatz_chain_blow_cap;
 use crate::project_euler_15::{fac, nchr};
@@ -48,7 +51,7 @@ use crate::project_euler_70::{gen_totient_vec, gen_unique_prime_facs, is_permuta
 use crate::project_euler_75::{
     gcd, gen_primitive_pyt_trips, gen_some_trigs, singular_integer_right_trigs,
 };
-use crate::project_euler_76::{plus_minus_part, plus_minus_part_diffs};
+use crate::project_euler_76::{partition_numbers, plus_minus_part, plus_minus_part_diffs};
 use crate::project_euler_94::gen_alm_equ_trigs;
 use crate::project_euler_95::{
     find_amicable_chain, get_social_chain, proper_divisors_sum, proper_divisors_sum_f,
@@ -58,12 +61,9 @@ use crate::scribbles::get_rand_vec;
 fn main() {
     let start = Instant::now();
 
-    let diffs = plus_minus_part_diffs(100);
-    println!("{:?}", diffs);
-
-    let plus_minus_vec = plus_minus_part(&diffs);
-    println!("{:?}", plus_minus_vec);
+    dbg!(lucas_lehmer(132049));
 
     println!("Time eslapsed: {:?}", start.elapsed());
+    
 
 }
